@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Institutions - CareerNavigatorSA</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>CareerNavigatorSA</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="careers.html">Career Paths</a>
+      <a href="bursaries.html">Bursaries</a>
+      <a href="institutions.html">Institutions</a>
+      <a href="courses.html">Courses</a>
+      <a href="career-subjects.html">Subjects</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+  <main>
+      
+  <h2>TVET Colleges by Province</h2>
+  <div class="filter-btns">
+    <button onclick="filterColleges('all')">All</button>
+    <button onclick="filterColleges('Gauteng')">Gauteng</button>
+    <button onclick="filterColleges('Limpopo')">Limpopo</button>
+    <button onclick="filterColleges('WesternCape')">Western Cape</button>
+    <button onclick="filterColleges('KZN')">KwaZulu-Natal</button>
+    <button onclick="filterColleges('EasternCape')">Eastern Cape</button>
+  </div>
+
+    <h2>TVET Colleges & Universities</h2>
+    <ul id="college-list"> <li class="college-item Limpopo"><a href="https://www.letcol.co.za" target="_blank">Letaba TVET College – Limpopo</a></li> <li class="college-item Limpopo"><a href="https://www.capricorncollege.edu.za" target="_blank">Capricorn TVET College – Limpopo</a></li> <li class="college-item WesternCape"><a href="https://www.bolandcollege.com" target="_blank">Boland College – Western Cape</a></li> <li class="college-item WesternCape"><a href="https://www.capecollege.edu.za" target="_blank">College of Cape Town – Western Cape</a></li> <li class="college-item KZN"><a href="https://www.elangeni.edu.za" target="_blank">Elangeni TVET College – KwaZulu-Natal</a></li> <li class="college-item KZN"><a href="https://www.mgc.tvet.gov.za" target="_blank">Mnambithi TVET College – KwaZulu-Natal</a></li> <li class="college-item EasternCape"><a href="https://www.bccollege.co.za" target="_blank">Buffalo City TVET College – Eastern Cape</a></li> <li class="college-item EasternCape"><a href="https://www.kinghintsacollege.edu.za" target="_blank">King Hintsa TVET College – Eastern Cape</a></li> </ul> 
+    </main>
+      
+    <script>
+  function filterColleges(province) {
+    const colleges = document.querySelectorAll('.college-item');
+    colleges.forEach(college => {
+      if(province === 'all' || college.classList.contains(province)) {
+        college.style.display = 'list-item';
+      } else {
+        college.style.display = 'none';
+      }
+    });
+  }
+  filterColleges('all');
+</script> 
+  <footer><p>&copy; 2025 CareerNavigatorSA</p></footer>
+</body>
+</html>
